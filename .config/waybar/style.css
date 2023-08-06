@@ -1,0 +1,79 @@
+* {
+    font-family: "OpenDyslexic Nerd Font", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 0;
+
+    min-height: 0;
+    background: transparent;
+}
+
+#clock, #battery, #backlight, #network, #pulseaudio, #pulseaudio-mic, #custom-power, #tray, #taskbar ,#workspaces {
+    margin: 2px 2px;
+    padding: 0px 10px 0px 10px;
+
+    border-top: 2px solid #cc2200;
+    border-bottom: 2px solid #cc2200;
+    border-radius: 2px;
+
+    background: rgba(204, 34, 0, 0.5);
+    color: #aaaaaa;
+}
+
+#custom-gap {
+    margin: 0px 20px 0px 20px;
+
+    border: none;
+
+    background: transparent;
+}
+
+#tray * {
+    /*background: grey;*/
+    background: rgba(204, 34, 0, 0.8);
+    border-radius: 5px;
+    border: none;
+}
+
+#tray > *, #tray > * > * {
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0px 10px 0px 10px;
+}
+
+#taskbar button.active, #workspaces button.active {
+    background: rgba(255, 128, 0, 0.7);
+}
+
+@keyframes blink {
+    to {
+        /*background-color: #ffffff;*/
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    color: #ffffff;
+
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+tooltip {
+    border-radius: 5px;
+
+    background: rgba(204, 34, 0, 0.7);
+}
+
+tooltip label {
+    color: #aaaaaa
+}
+

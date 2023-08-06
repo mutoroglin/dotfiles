@@ -1,0 +1,126 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 3, // Gaps between modules (4px)
+
+    // Choose the order of the modules
+    "modules-left": ["custom/power", "custom/gap", "wlr/workspaces", "tray", "wlr/taskbar"],
+    //"modules-left": ["custom/power", "custom/gap", "hyprland/workspaces", "tray", "wlr/taskbar"],
+    "modules-center": [],
+    //"modules-right": ["cava", "network", "backlight", "pulseaudio#mic", "pulseaudio", "battery", "clock"],
+    "modules-right": ["network", "backlight", "pulseaudio#mic", "pulseaudio", "battery", "clock"],
+    // Modules configuration
+    "custom/power": {
+        "format": "",
+        "tooltip-format": "Power Options",
+        "on-click": "~/coding/bash/launch_powerswitch.sh"
+    },
+    "custom/gap": {
+        "format": " ",
+        "tooltip-format": "",
+    },
+    "wlr/workspaces": {
+    //"hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        //"format-icons": {
+        //    "1": "",
+        //    "2": "",
+        //    "3": "",
+        //    "4": "",
+        //    "5": "",
+        //    "urgent": "",
+        //    "focused": "",
+        //    "default": ""
+        //},
+        "sort-by-number": true,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+        }
+    },
+    "wlr/taskbar": {
+            "format": "{icon}",
+
+            "icon-size": 21,
+            "icon-theme": "Numix-Circle",
+
+            "tooltip-format": "{title}",
+
+            "on-click": "activate",
+            "on-click-right": "close",
+
+            "app_ids-mapping": {
+                "firefoxdeveloperedition": "firefox-developer-edition"
+            }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%d. %b '%y %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "remaining {time}"
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "󰲛 󰖪",
+
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤨"],
+
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": " {ifname} on {essid} via {gwaddr}",
+        "tooltip-format-disconnected": " no network connection!",
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " -%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "pulseaudio#mic": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " -%",
+
+        "on-click": "pactl set-source-mute 0 toggle"
+    },
+}
