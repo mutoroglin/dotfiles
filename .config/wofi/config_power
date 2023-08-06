@@ -1,0 +1,14 @@
+show=dmenu
+hide_search=true
+
+location=top_left
+xoffset=-180
+yoffset=-168
+#height=400
+#width=200
+sort_order=alphabetical
+orientation=horizontal
+content_halign=center
+
+style=/home/lee/.config/wofi/style_power.css
+

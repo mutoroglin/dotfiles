@@ -1,0 +1,50 @@
+window {
+margin: 5px;
+background: transparent;
+//font-family: "Hermit", sans-serif;
+//font-family: "Liberation", sans-serif;
+//font-size: 18px;
+font-family: "OpenDyslexic Nerd Font", sans-serif;
+font-size: 20px;
+font-weight: bold;
+min-height: 0;
+}
+
+#input {
+margin: 10px;
+border: 2px solid #cc2200;
+//background: transparent;
+color: black;
+}
+
+#inner-box {
+border: 5px solid #cc2200;
+background-color: #cc2200;
+border-radius: 5;
+//margin: 100px;
+}
+
+#text {
+margin: 5px;
+background: transparent;
+color: #aaaaaa;
+} 
+
+#entry {
+padding: 10px 0px 10px 0px;
+}
+
+#entry:selected {
+background: #aaaaaa;
+}
+
+#text:selected {
+color: black;
+}
+
+#outer-box {
+}
+
+#scroll {
+}
+

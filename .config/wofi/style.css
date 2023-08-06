@@ -1,0 +1,65 @@
+window {
+margin: 5px;
+background: transparent;
+//font-family: "Hermit", sans-serif;
+//font-family: "Liberation", sans-serif;
+font-family: "OpenDyslexic Nerd Font", sans-serif;
+font-size: 20px;
+font-weight: bold;
+min-height: 0;
+}
+
+#input, #input {
+margin: 10px;
+border: 2px solid #cc2200;
+background-color: #cc2200;
+}
+
+#inner-box {
+border: 5px solid #cc2200;
+background-color: #cc2200;
+border-radius: 5;
+}
+
+#text {
+margin: 5px;
+background: transparent;
+color: #aaaaaa;
+} 
+
+#entry:selected {
+background: #aaaaaa;
+}
+
+#text:selected {
+color: black;
+}
+
+#outer-box {
+}
+
+#scroll {
+}
+
+image {
+padding-left: 25px;
+padding-right: 10px;
+}
+
+expander image {
+padding-left: 10px;
+padding-right: 10px;
+}
+
+list image {
+padding-left: 50px;
+padding-right: 10px;
+}
+
+list #entry{
+background-color: #cc6000;
+}
+
+list #text {
+color: #444444;
+}
