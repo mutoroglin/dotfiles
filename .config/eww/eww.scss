@@ -1,0 +1,30 @@
+/** { all: unset; }*/
+
+.volume, .brightness, .mic {
+  background-color: transparent;
+}
+
+.volume_status, .brightness_status, .mic_status {
+  border: 2px solid #cc2200;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(204, 34, 0, 1);
+  //background: rgba(255, 128, 0, 1);
+}
+
+.volume_status__element, .brightness_status__element, .mic_status__element {
+  //border: 2px solid blue;
+}
+
+.volume_status__progress, .brightness_status__element, .mic_status__element {
+}
+
+.volume_status__button, .brightness_status__element, .mic_status__element {
+  background-color: transparent;
+  border: none;
+}
+
+.progress_bar progress {
+  background-color: #ff8000;
+}

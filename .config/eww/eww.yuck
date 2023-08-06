@@ -1,0 +1,131 @@
+(defvar volume-polling false)
+(defvar brightness-polling false)
+(defvar mic-polling false)
+
+(defpoll volume :interval "0.1s"
+                :initial-value "0"
+                :run-while volume-polling
+  `wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d" " -f2`
+;  `echo "{\"level\":\"$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d" " -f2-)\"}"`
+;  `val=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d" " -f2); [ $val = "" ] && echo "0.0" || echo $val`
+)
+
+(defpoll volume-mute :interval "0.1s"
+                     :initial-value "0"
+                     :run-while volume-polling
+  `wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d" " -f3`
+)
+
+(defpoll brightness :interval "0.1s"
+                    :initial-value "0"
+                    :run-while brightness-polling
+  `brightnessctl -c backlight g`
+)
+
+(defpoll mic :interval "0.1s"
+             :initial-value "0%"
+             :run-while mic-polling
+  `pactl get-source-volume 0 | cut -d" " -f5`
+)
+
+(defpoll mic-mute :interval "0.1s"
+                  :initial-value "no"
+                  :run-while mic-polling
+  `pactl get-source-mute 0 | cut -d" " -f2`
+)
+
+(defwindow volume
+           :monitor 0
+           :geometry (geometry :x "20px"
+                               :y "20px"
+                               :width "100px"
+                               :height "30px"
+                               :anchor "top left")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "normal"
+           :exclusive false
+  (volume_widget)
+)
+
+(defwidget volume_widget []
+  (box :class "volume_status"
+       :space-evenly false
+       :orientation "horizontal"
+       :halign "center"
+       :valign "center"
+       :spacing 10
+    (label :class "volume_status__label-volume volume_status__element"
+           :text "${volume-mute == "[MUTED]" ? "" : volume < 0.35 ? "" : volume < 0.7 ? "" : ""} ${volume-mute == "[MUTED]" ? "-" : round((volume * 100), 0)}%")
+    (progress :class "volume_status__progress volume_status__element progress_bar"
+              :value {volume-mute == "[MUTED]" ? 0 : volume * 100}
+              :halign "center"
+              :valign "center")
+;    (button :class "volume_status__button volume_status__element"
+;            :onclick "eww close volume"
+;      "󰛉")
+  )
+)
+
+(defwindow brightness
+           :monitor 0
+           :geometry (geometry :x "20px"
+                               :y "20px"
+                               :width "100px"
+                               :height "30px"
+                               :anchor "top left")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "normal"
+           :exclusive false
+  (brightness_widget)
+)
+
+(defwidget brightness_widget []
+  (box :class "brightness_status"
+       :space-evenly false
+       :orientation "horizontal"
+       :halign "center"
+       :valign "center"
+       :spacing 10
+    (label :class "brightness_status__label-volume brightness_status__element"
+           :text " ${round((brightness * 100 / 937), 0)}%")
+    (progress :class "brightness_status__progress brighntess_status__element progress_bar"
+              :value {brightness * 100 / 937}
+              :halign "center"
+              :valign "center")
+;    (button :class "brightness_status__button brightness_status__element"
+;            :onclick "eww close brightness"
+;      "󰛉")
+  )
+)
+
+(defwindow mic
+           :monitor 0
+           :geometry (geometry :x "20px"
+                               :y "20px"
+                               :width "100px"
+                               :height "30px"
+                               :anchor "top left")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "normal"
+           :exclusive false
+  (mic_widget)
+)
+
+(defwidget mic_widget []
+  (box :class "mic_status"
+       :space-evenly false
+       :orientation "horizontal"
+       :halign "center"
+       :valign "center"
+       :spacing 10
+    (label :class "mic_status__label-volume mic_status__element"
+           :text "${mic-mute == "yes" ? "" : ""} ${mic-mute == "yes" ? "-%" : mic}")
+    (progress :class "mic_status__progress mic_status__element progress_bar"
+              :value {mic-mute == "yes" ? 0 : 100}
+              :halign "center"
+              :valign "center")
+  )
+)
