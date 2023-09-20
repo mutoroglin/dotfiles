@@ -6,11 +6,10 @@
     "spacing": 3, // Gaps between modules (4px)
 
     // Choose the order of the modules
-    "modules-left": ["custom/power", "custom/gap", "wlr/workspaces", "tray", "wlr/taskbar"],
-    //"modules-left": ["custom/power", "custom/gap", "hyprland/workspaces", "tray", "wlr/taskbar"],
+    "modules-left": ["custom/power", "custom/gap", "hyprland/workspaces", "tray", "wlr/taskbar"],
     "modules-center": [],
-    //"modules-right": ["cava", "network", "backlight", "pulseaudio#mic", "pulseaudio", "battery", "clock"],
-    "modules-right": ["network", "backlight", "pulseaudio#mic", "pulseaudio", "battery", "clock"],
+    "modules-right": ["cava", "pulseaudio", "pulseaudio#mic", "backlight", "network", "battery", "clock"],
+    //"modules-right": ["pulseaudio", "cava", "pulseaudio#mic", "backlight", "network", "battery", "clock"],
     // Modules configuration
     "custom/power": {
         "format": "",
@@ -21,20 +20,15 @@
         "format": " ",
         "tooltip-format": "",
     },
+    "hyprland/workspaces": {
+        "format": "{id}",
+         "persistent_workspaces": {
+             "*": 5
+         }
+    },
     "wlr/workspaces": {
-    //"hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        //"format-icons": {
-        //    "1": "",
-        //    "2": "",
-        //    "3": "",
-        //    "4": "",
-        //    "5": "",
-        //    "urgent": "",
-        //    "focused": "",
-        //    "default": ""
-        //},
         "sort-by-number": true,
         "persistent_workspaces": {
             "1": [],
@@ -61,6 +55,31 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
+    },
+    "cava": {
+//        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 1,
+//        "sensitivity": 10,
+        "bars": 12,
+//        "lower_cutoff_freq": 50,
+//        "higher_cutoff_freq": 10000,
+        "sleep_timer": 3,
+        "method": "pipewire",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,  // 32, // =SPACE
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 0.1,
+//        "format-icons" : ["1", "2", "3", "4", "5", "6", "7", "8" ],
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+//        "format-icons" : ["󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
     },
     "clock": {
         "format": "{:%d. %b '%y %H:%M}",

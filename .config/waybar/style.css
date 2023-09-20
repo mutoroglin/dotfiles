@@ -10,7 +10,7 @@
     background: transparent;
 }
 
-#clock, #battery, #backlight, #network, #pulseaudio, #pulseaudio-mic, #custom-power, #tray, #taskbar ,#workspaces {
+#clock, #battery, #backlight, #network, #pulseaudio, #pulseaudio-mic, #custom-power, #tray, #taskbar ,#workspaces, #cava {
     margin: 2px 2px;
     padding: 0px 10px 0px 10px;
 
@@ -20,6 +20,14 @@
 
     background: rgba(204, 34, 0, 0.5);
     color: #aaaaaa;
+}
+
+#cava {
+    font-family: mono;
+}
+
+#cava.silence {
+    opacity: 0;
 }
 
 #custom-gap {
