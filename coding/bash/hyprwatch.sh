@@ -7,10 +7,11 @@
 # license: GPLv3
 ######################################
 
-wallpaper1='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/la_rotonde_1920x1080.png"'
-wallpaper2='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/inside2_not_rotonde_1920x1080.png"'
-wallpaper3='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/kitchen2_not_rotonde_1920x1080.png"'
-wallpaper4='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/back-alley2_not_rotonde_1920x1080.png"'
+wallpaper1='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/la_rotonde_1920x1080.png"'
+wallpaper2='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/vinside2_not_rotonde_1920x1080.png"'
+wallpaper3='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/bar_not_rotonde_1920x1080.png"'
+wallpaper4='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/kitchen2_not_rotonde_1920x1080.png"'
+wallpaper5='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/back-alley2_not_rotonde_1920x1080.png"'
 
 handle() {
     case $1 in
@@ -20,6 +21,7 @@ handle() {
                  2) echo -n "set wallpaper #2 ... "; eval "$wallpaper2" ;;
                  3) echo -n "set wallpaper #3 ... "; eval "$wallpaper3" ;;
                  4) echo -n "set wallpaper #4 ... "; eval "$wallpaper4" ;;
+                 5) echo -n "set wallpaper #5 ... "; eval "$wallpaper5" ;;
              esac
              ;;
     esac
