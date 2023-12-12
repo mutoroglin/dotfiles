@@ -2,16 +2,24 @@
 
 ######################################
 # HYPRWATCH
-# version: 1.0
+# version: 1.1
 # author: mutoroglin@posteo.org
 # license: GPLv3
 ######################################
 
-wallpaper1='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/la_rotonde_1920x1080.png"'
-wallpaper2='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/vinside2_not_rotonde_1920x1080.png"'
-wallpaper3='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/bar_not_rotonde_1920x1080.png"'
-wallpaper4='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/kitchen2_not_rotonde_1920x1080.png"'
-wallpaper5='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/back-alley2_not_rotonde_1920x1080.png"'
+########### la rotonde ###########
+#wallpaper1='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/la_rotonde_1920x1080.png"'
+#wallpaper2='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/vinside2_not_rotonde_1920x1080.png"'
+#wallpaper3='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/bar_not_rotonde_1920x1080.png"'
+#wallpaper4='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/kitchen2_not_rotonde_1920x1080.png"'
+#wallpaper5='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/rotonde/back-alley2_not_rotonde_1920x1080.png"'
+
+########### fantasy ###########
+wallpaper1='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/fantasy/village_1920x1080.png"'
+wallpaper2='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/fantasy/night_talk_1920x1080.png"'
+wallpaper3='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/fantasy/drowfight_1920x1080.png"'
+wallpaper4='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/fantasy/hordes_1920x1080.png"'
+wallpaper5='hyprctl hyprpaper wallpaper "eDP-1,~/Pictures/wallpaper/fantasy/dragons_1920x1080.png"'
 
 handle() {
     case $1 in
