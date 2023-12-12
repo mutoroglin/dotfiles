@@ -22,3 +22,14 @@ Using hyprland is an experiment to
 
 <img src="https://github.com/mutoroglin/dotfiles/blob/main/Pictures/screenshots/system_info.png" height="auto" width="auto"/>
 
+## waybar highlights
+Waybar is a very customizable status bar.
+I display on the left side of the bar the powerbutton, the workspace overview the taskbar and the tray.
+On the righthand side I display all kind of status icons and my system clock.
+A highlight is the [CAVA](https://aur.archlinux.org/packages/cava) module, an audio visualizer. It unwraps next to the volume icon as audio is played.
+
+<img src="https://github.com/mutoroglin/dotfiles/blob/main/Pictures/screenshots/waybar_cava_in_motion.png" height="auto" width="auto"/>
+
+In order to easily install waybar with cava functionality I setup and maintain two AUR packages (for the ARCH ecosystem):
+ * [libcava](https://aur.archlinux.org/packages/libcava)
+ * [waybar-cava](https://aur.archlinux.org/packages/waybar-cava]waybar-cava)
