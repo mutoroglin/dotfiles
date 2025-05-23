@@ -38,7 +38,7 @@
            :monitor 0
            :geometry (geometry :x "20px"
                                :y "20px"
-                               :width "100px"
+                               :width "300px"
                                :height "30px"
                                :anchor "top left")
            :stacking "fg"
@@ -52,14 +52,14 @@
   (box :class "volume_status"
        :space-evenly false
        :orientation "horizontal"
-       :halign "center"
+       :halign "left"
        :valign "center"
        :spacing 10
     (label :class "volume_status__label-volume volume_status__element"
            :text "${volume-mute == "[MUTED]" ? "" : volume < 0.35 ? "" : volume < 0.7 ? "" : ""} ${volume-mute == "[MUTED]" ? "-" : round((volume * 100), 0)}%")
     (progress :class "volume_status__progress volume_status__element progress_bar"
               :value {volume-mute == "[MUTED]" ? 0 : volume * 100}
-              :halign "center"
+              :halign "right"
               :valign "center")
 ;    (button :class "volume_status__button volume_status__element"
 ;            :onclick "eww close volume"

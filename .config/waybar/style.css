@@ -57,6 +57,11 @@
 
 #workspaces button {
     padding: 0px 10px 0px 10px;
+    color: #aaaaaa;
+}
+
+#workspaces button.empty {
+    color: #cc2200;
 }
 
 #taskbar button.active, #workspaces button.active {
@@ -88,7 +93,7 @@
 
 tooltip {
     border-radius: 5px;
-    background: rgba(204, 34, 0, 0.6);
+    background: rgba(204, 34, 0, 0.8);
 }
 
 tooltip label {

@@ -23,7 +23,7 @@
     },
     "hyprland/workspaces": {
         "format": "{id}",
-         "persistent_workspaces": {
+         "persistent-workspaces": {
              "*": 5
          }
     },
@@ -94,7 +94,8 @@
         },
         "tooltip": true,
         "tooltip-format": "{icon} {volume}%",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        // "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click": "pwvucontrol"
     },
     "pulseaudio/slider": {
         "min": 0,
@@ -132,7 +133,28 @@
         "tooltip-format": "󰁹 {capacity}%, remaining {time}"
     },
     "clock": {
-        "format": "{:%d. %b '%y %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // "format": "{:%d. %b '%y %H:%M}",
+        "format": " {:%H:%M}",
+        "tooltip-format": "<big>{:%A %d. %B %Y, week %W}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "left",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#aaaaaa'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>cw{}</b></span>",
+                              "weekdays":   "<span color='#aaaaaa'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699' background='#440202'><b>{}</b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 }

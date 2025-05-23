@@ -133,7 +133,8 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: monospace
-    family: Hurmit Nerd Font
+    #family: Hurmit Nerd Font
+    family: Hermit
     style: Regular
 
     # The `style` can be specified to pick a specific face.
