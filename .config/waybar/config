@@ -15,7 +15,8 @@
     "custom/power": {
         "format": "Btw, I use ",
         "tooltip-format": "Power Options",
-        "on-click": "~/coding/bash/launch_powerswitch.sh"
+        //"on-click": "~/coding/bash/launch_powerswitch.sh"
+        "on-click": "launch_powerswitch.sh"
     },
     "custom/gap": {
         "format": " ",

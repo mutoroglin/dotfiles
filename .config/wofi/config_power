@@ -2,10 +2,11 @@ show=dmenu
 hide_search=true
 
 location=top_left
-xoffset=-180
+#xoffset=-180
+xoffset=0
 yoffset=-168
 #height=400
-#width=200
+width=700
 sort_order=alphabetical
 orientation=horizontal
 content_halign=center

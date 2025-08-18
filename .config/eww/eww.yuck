@@ -38,7 +38,7 @@
            :monitor 0
            :geometry (geometry :x "20px"
                                :y "20px"
-                               :width "300px"
+                               :width "260px"
                                :height "30px"
                                :anchor "top left")
            :stacking "fg"
@@ -71,7 +71,7 @@
            :monitor 0
            :geometry (geometry :x "20px"
                                :y "20px"
-                               :width "100px"
+                               :width "270px"
                                :height "30px"
                                :anchor "top left")
            :stacking "fg"
